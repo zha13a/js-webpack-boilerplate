@@ -1,7 +1,9 @@
+@import './test.vars.scss';
+
 body {
   background-color: #1a1a1a;
   color: white;
-  font-family: 'Quicksand', sans-serif;
+  font-family: $test-font-family;
   font-weight: 400;
   font-size: 24px;
   margin: 20px;
@@ -23,7 +25,8 @@ body {
 @keyframes rotating {
   0% {
     transform: rotate(0turn);
-  } 100% {
+  }
+  100% {
     transform: rotate(1turn);
   }
 }
