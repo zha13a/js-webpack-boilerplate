@@ -1,5 +1,5 @@
-import '~/styles/test.styles.css';
-import '~/styles/test.fonts.css';
+import '~/styles/test.styles.scss';
+import '~/styles/test.fonts.scss';
 
 import { titleText } from './js/test';
 import webpackLogo from '~/img/webpack-icon.svg';
@@ -16,5 +16,4 @@ window.onload = () => {
   logo.src = webpackLogo;
 
   rootNode.append(title, logo);
-  // rootNode.innerText = '-> This should be a custom font';
 }

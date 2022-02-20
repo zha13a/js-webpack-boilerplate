@@ -3,16 +3,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const paths = {
   src: path.resolve(__dirname, '../src'),
-  build: path.resolve(__dirname, '../docs'),
 }
 
 module.exports = {
   mode: 'production',
   entry: [paths.src + '/index.js'],
   output: {
-    path: paths.build,
+    path: path.resolve(__dirname, '../docs'),
     filename: '[name].bundle.js',
-    publicPath: '/docs'
+    library: 'webpackGhPages',
   },
   module: {
     rules: [
@@ -22,10 +21,22 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.css$/i,
+        test: /\.(sass|scss|css)$/,
         use: [
           'style-loader',
           'css-loader',
+          { 
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true 
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          },
         ],
       },
       {

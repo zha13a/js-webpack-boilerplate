@@ -14,6 +14,13 @@ module.exports = {
     filename: '[name].bundle.js',
     publicPath: '/'
   },
+  devServer: {
+    historyApiFallback: true,
+    open: true,
+    compress: true,
+    hot: true,
+    port: 8080,
+  },
   module: {
     rules: [
       {
@@ -22,10 +29,22 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.css$/i,
+        test: /\.(sass|scss|css)$/,
         use: [
           'style-loader',
           'css-loader',
+          { 
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true 
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          },
         ],
       },
       {
