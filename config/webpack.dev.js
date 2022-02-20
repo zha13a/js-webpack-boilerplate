@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 const paths = {
   src: path.resolve(__dirname, '../src'),
@@ -71,7 +72,8 @@ module.exports = {
       title: 'Webpack 5 & Vanilla JS boilerplate',
       favicon: paths.src + '/img/favicon.svg',
       filename: 'index.html'
-    })
+    }),
+    new StylelintPlugin()
   ],
   resolve: {
     modules: [paths.src, 'node_modules'],

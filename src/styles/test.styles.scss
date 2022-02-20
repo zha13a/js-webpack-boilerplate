@@ -1,18 +1,19 @@
 @import './test.vars.scss';
 
 body {
-  background-color: #1a1a1a;
-  color: white;
   font-family: $test-font-family;
   font-weight: 400;
+  color: white;
+  background-color: #1a1a1a;
   font-size: 24px;
   margin: 20px;
 }
 
 .title {
   font-size: 36px;
-  width: fit-content;
   margin: auto;
+  height: fit-content;
+  width: fit-content;
 }
 
 .webpack-logo {
