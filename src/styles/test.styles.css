@@ -4,4 +4,26 @@ body {
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
   font-size: 24px;
+  margin: 20px;
+}
+
+.title {
+  font-size: 36px;
+  width: fit-content;
+  margin: auto;
+}
+
+.webpack-logo {
+  display: block;
+  margin: 60px auto;
+  width: 256px;
+  animation: 5s linear 0s infinite rotating;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0turn);
+  } 100% {
+    transform: rotate(1turn);
+  }
 }
