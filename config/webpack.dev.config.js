@@ -9,7 +9,7 @@ const paths = {
 module.exports = {
   entry: [paths.src + '/index.js'],
   output: {
-    path: path.build,
+    path: paths.build,
     filename: '[name].bundle.js',
     publicPath: '/'
   },
@@ -28,18 +28,12 @@ module.exports = {
         ],
       },
       {
-        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/, /\.ico$/],
-        type: 'asset/resource',
-        generator: {
-          filename: './assets/img/[name].[ext]',
-        }
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: 'asset/resource'
       },
       {
-        test: /\.(woff|woff2)$/i,
-        type: 'asset/inline',
-        generator: {
-          filename: './assets/fonts/[name].[ext]',
-        }
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: 'asset/inline'
       }
     ]
   },
@@ -50,5 +44,12 @@ module.exports = {
       favicon: paths.src + '/img/favicon.svg',
       filename: 'index.html'
     }),
-  ]
+  ],
+  resolve: {
+    modules: [paths.src, 'node_modules'],
+    extensions: ['.js', '.jsx', '.json'],
+    alias: {
+      '~': paths.src,
+    },
+  }
 }
