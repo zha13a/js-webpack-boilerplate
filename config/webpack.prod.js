@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 const paths = {
   src: path.resolve(__dirname, '../src'),
@@ -29,7 +30,19 @@ module.exports = {
           { 
             loader: 'postcss-loader',
             options: {
-              sourceMap: true 
+              postcssOptions: {
+                plugins: [
+                  autoprefixer({
+                    overrideBrowserslist: [
+                      '>1%',
+                      'last 4 versions',
+                      'Firefox ESR',
+                      'not ie < 9',
+                    ],
+                  })
+                ],
+                sourceMap: true
+              }
             }
           },
           {
