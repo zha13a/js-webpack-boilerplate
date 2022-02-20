@@ -16,4 +16,4 @@ window.onload = () => {
   logo.src = webpackLogo;
 
   rootNode.append(title, logo);
-}
+};
