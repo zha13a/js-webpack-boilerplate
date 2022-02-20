@@ -4,8 +4,8 @@ const autoprefixer = require('autoprefixer');
 
 const paths = {
   src: path.resolve(__dirname, '../src'),
-  build: path.resolve(__dirname, '../dist'),
-}
+  build: path.resolve(__dirname, '../dist')
+};
 
 module.exports = {
   mode: 'development',
@@ -20,32 +20,27 @@ module.exports = {
     open: true,
     compress: true,
     hot: true,
-    port: 14134,
+    port: 14134
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: '/node_modules',
-        loader: 'babel-loader',
+        loader: 'babel-loader'
       },
       {
         test: /\.(sass|scss|css)$/,
         use: [
           'style-loader',
           'css-loader',
-          { 
+          {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
                 plugins: [
                   autoprefixer({
-                    overrideBrowserslist: [
-                      '>1%',
-                      'last 4 versions',
-                      'Firefox ESR',
-                      'not ie < 9',
-                    ],
+                    overrideBrowserslist: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9']
                   })
                 ],
                 sourceMap: true
@@ -57,8 +52,8 @@ module.exports = {
             options: {
               sourceMap: true
             }
-          },
-        ],
+          }
+        ]
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
@@ -76,13 +71,13 @@ module.exports = {
       title: 'Webpack 5 & Vanilla JS boilerplate',
       favicon: paths.src + '/img/favicon.svg',
       filename: 'index.html'
-    }),
+    })
   ],
   resolve: {
     modules: [paths.src, 'node_modules'],
     extensions: ['.js', '.jsx', '.json'],
     alias: {
-      '~': paths.src,
-    },
+      '~': paths.src
+    }
   }
-}
+};
