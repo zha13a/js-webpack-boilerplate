@@ -1,0 +1,30 @@
+{
+  "name": "js-webapck-boilerplate",
+  "version": "0.1",
+  "main": "src/index.js",
+  "repository": "https://github.com/ja13a/js-webapck-boilerplate.git",
+  "author": "Суворов Сергей <suvorovsergey99@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+    "webpack",
+    "webpack 5",
+    "webpack boilerplate",
+    "vanilla js",
+    "javascript"
+  ],
+  "scripts": {
+    "dev": "webpack-dev-server --config config/webpack.dev.config.js --mode development"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.6.0",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
+}

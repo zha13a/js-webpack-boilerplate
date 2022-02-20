@@ -1,2 +1,2 @@
 # js-webapck-boilerplate
-Webpack 6 &amp; Vanilla JS boilerplate
+Webpack 5 &amp; Vanilla JS boilerplate
