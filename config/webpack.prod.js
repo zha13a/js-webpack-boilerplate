@@ -3,13 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const paths = {
   src: path.resolve(__dirname, '../src'),
+  build: path.resolve(__dirname, '../docs')
 }
 
 module.exports = {
   mode: 'production',
   entry: [paths.src + '/index.js'],
   output: {
-    path: path.resolve(__dirname, '../docs'),
+    path: paths.build,
     filename: '[name].bundle.js',
     library: 'webpackGhPages',
   },
